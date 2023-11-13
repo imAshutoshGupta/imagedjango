@@ -7,6 +7,7 @@ from django.conf import settings
 urlpatterns = [
     path('image', views.image),
     path('upload', views.upload),
+    path('showimage', views.showimage),
 ]
 
 if settings.DEBUG:
