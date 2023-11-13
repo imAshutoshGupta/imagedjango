@@ -7,3 +7,6 @@ def image(request):
 
 def upload(request):
     return render(request,'upload.html')
+
+def test(request):
+    pass
