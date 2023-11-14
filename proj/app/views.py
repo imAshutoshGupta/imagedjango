@@ -1,4 +1,5 @@
 from django.shortcuts import render,HttpResponse
+from django.views import View
 from django.core.files.storage import FileSystemStorage
 from .models import uploadFile
 # Create your views here.
@@ -28,3 +29,16 @@ def showimage(request):
     imgs=uploadFile.objects.all()
     context = {'images' : imgs}
     return render(request,'showimage.html',context)
+
+class FormData(View):
+    def get(self,request):
+        return render(request,'form.html')
+    
+    def post(self, request):
+        
+            fn=request.POST['fname']
+            ln=request.POST['lname']
+            print(fn)
+            print(ln)
+            return HttpResponse("Data fetched")
+        #return render(request,'form.html')
